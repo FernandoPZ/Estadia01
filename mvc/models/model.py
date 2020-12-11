@@ -119,7 +119,8 @@ class Alumnos():
                 return result
 
 
-        # Vista al perfil de profesor
+
+    # Vista al perfil de profesor
 
         def view(self, cve_maestro):
             try:
@@ -153,8 +154,6 @@ class Alumnos():
                         'peso':row[20],            
                         'telefonoe':row[21],
                         'correo_alternativo':row[23],
-                        'cve_materia':row[24],
-                        'nombre':row[25],
                     }
                 result.append(r)
                 self.cursor.close()
