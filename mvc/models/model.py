@@ -119,13 +119,12 @@ class Alumnos():
                 return result
 
 
-
-    # Vista al perfil de profesor
+        # Vista al perfil de profesor
 
         def view(self, cve_maestro):
             try:
                 self.connect()
-                query = ("SELECT * FROM [saiiut].[saiiut].[maestros] FULL JOIN [saiiut].[saiiut].[personas] ON [saiiut].[saiiut].[maestros].cve_maestro=[saiiut].[saiiut].[personas].cve_persona WHERE cve_maestro = ?")
+                query = ("SELECT * FROM [saiiut].[saiiut].[maestros] FULL JOIN [saiiut].[saiiut].[personas] ON [saiiut].[saiiut].[maestros].cve_maestro=[saiiut].[saiiut].[personas].cve_persona FULL JOIN [saiiut].[saiiut].[materias] ON [saiiut].[saiiut].[maestros].cve_maestro=[saiiut].[saiiut].[personas].cve_persona WHERE cve_maestro = ?")
                 values = (cve_maestro)
                 self.cursor.execute(query, values)
                 result = []
@@ -154,6 +153,8 @@ class Alumnos():
                         'peso':row[20],            
                         'telefonoe':row[21],
                         'correo_alternativo':row[23],
+                        'cve_materia':row[24],
+                        'nombre':row[25],
                     }
                 result.append(r)
                 self.cursor.close()
