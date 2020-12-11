@@ -10,12 +10,10 @@ import web
 
 urls = [
     '/horario/?','mvc.controllers.alumnos.horario.Horario',
-    '/borrar/(.*)','mvc.controllers.alumnos.borrar.Borrar', # /(.&) NOS PERMITE OBTENER PARAMETROS
     '/view/(.*)','mvc.controllers.alumnos.view.View',
-    '/modificar/(.*)','mvc.controllers.alumnos.modificar.Modificar',
     '/carga/?','mvc.controllers.alumnos.cargaacademica.CargaAcademica',
-    '/','mvc.controllers.alumnos.cargaacademica.CargaAcademica',
     '/profile/?','mvc.controllers.alumnos.profile.Profile',
+    '/login/?','mvc.controllers.alumnos.login.Login'
 
 ] # COLOCAMOS LA RUTA
 
